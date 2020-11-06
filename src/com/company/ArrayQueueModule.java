@@ -8,14 +8,11 @@ public abstract class ArrayQueueModule {
     private static  int begin;
     private static int end;
 
-
     static void ArrayQueueModuleConstructor(int quantity){
         queue_mass=new int[quantity];
         begin=-1;//начало очереди. Обновляется при извлечении poll
         end=-1; //конец очереди. Обновляется при добавление add
     }
-
-
 
     public  static  void generate(){
         Random rand= new Random();
@@ -35,6 +32,7 @@ public abstract class ArrayQueueModule {
             System.out.println("Чёт вроде места нет");
         }
     }
+
     public static  int poll(){
         elements--;
         begin=(begin+1)%queue_mass.length;
@@ -50,28 +48,21 @@ public abstract class ArrayQueueModule {
         if(elements!=queue_mass.length) return false;
         else return true;
     }
+
     public static  boolean isEmpty(){
         if(elements==0) return true;
         else return false;
     }
+
     public  static boolean deleteQueue(){
         queue_mass=new int[queue_mass.length];
         begin=-1;//начало очереди. Обновляется при извлечении poll
         end=-1; //конец очереди. Обновляется при добавление add
         return true;
-
     }
-    //    public int peek(){
-//        return queue_mass[pointer--];
-//    }
+
     public static  int quantityElements(){
         return elements;
     }
-
-
-
-    // peek //просто элемент посмотреть
-    // poll извлекаем
-
 
 }

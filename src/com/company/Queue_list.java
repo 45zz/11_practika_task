@@ -14,7 +14,6 @@ public class Queue_list {
     void add(int element)
     {
         if(elements+1!=size){
-
             ListElement a = new ListElement();//новый узел
             a.element=element;
             if(head == null)//Если очередь пустая
@@ -29,11 +28,8 @@ public class Queue_list {
                 tail.next=a;
                 tail=tail.next;
             }
-
-
         }
     }
-
 
     public boolean isFull(){
         if(elements!=size) return false;
@@ -44,21 +40,18 @@ public class Queue_list {
         else return false;
     }
 
-
     void del()
     {
         if(head == null) //если очередь пуста
             return;
 
         poll();
-
-
     }
+
     public int poll(){
         elements--;
         ListElement tmp=head;
         head=head.next;
-
         return tmp.element;
     }
 

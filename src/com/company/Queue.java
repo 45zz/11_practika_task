@@ -9,15 +9,11 @@ public class Queue {
     private int begin;
     private int end;
 
-
-
     Queue(int quantity){
         queue_mass=new int[quantity];
         begin=-1;//начало очереди. Обновляется при извлечении poll
         end=-1; //конец очереди. Обновляется при добавление add
     }
-
-
 
     public void generate(){
         Random rand= new Random();
@@ -37,6 +33,7 @@ public class Queue {
             System.out.println("Чёт вроде места нет");
         }
     }
+
     public int poll(){
         elements--;
         begin=(begin+1)%queue_mass.length;
@@ -52,10 +49,12 @@ public class Queue {
         if(elements!=queue_mass.length) return false;
         else return true;
     }
+
     public boolean isEmpty(){
         if(elements==0) return true;
         else return false;
     }
+
     public boolean deleteQueue(){
         queue_mass=new int[queue_mass.length];
         begin=-1;//начало очереди. Обновляется при извлечении poll
@@ -63,9 +62,7 @@ public class Queue {
         return true;
 
     }
-    //    public int peek(){
-//        return queue_mass[pointer--];
-//    }
+
     public int quantityElements(){
         return elements;
     }
@@ -82,6 +79,4 @@ public class Queue {
                 '}';
     }
 
-// peek //просто элемент посмотреть
-// poll //извлекаем
 }

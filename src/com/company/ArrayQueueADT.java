@@ -9,7 +9,6 @@ public class ArrayQueueADT {
     private int begin;
     private int end;
 
-
     public static void ArrayQueueADTConstructor (ArrayQueueADT q, int quantity){
         q.queue_mass =new int[quantity];
         q.begin=-1;//начало очереди. Обновляется при извлечении poll
@@ -33,6 +32,7 @@ public class ArrayQueueADT {
             System.out.println("Чёт вроде места нет");
         }
     }
+
     public int poll(ArrayQueueADT q){
         q.elements--;
         q.begin=(q.begin+1)%q.queue_mass.length;
@@ -48,28 +48,23 @@ public class ArrayQueueADT {
         if(q.elements!=q.queue_mass.length) return false;
         else return true;
     }
+
     public  boolean isEmpty(ArrayQueueADT q){
         if(q.elements==0) return true;
         else return false;
     }
+
     public  boolean deleteQueue(ArrayQueueADT q){
         q.queue_mass=new int[q.queue_mass.length];
         q.begin=-1;//начало очереди. Обновляется при извлечении poll
         q.end=-1; //конец очереди. Обновляется при добавление add
         return true;
-
     }
-    //    public int peek(){
-//        return queue_mass[pointer--];
-//    }
+
     public  int quantityElements(ArrayQueueADT q){
         return q.elements;
     }
 
-
-
     // peek //просто элемент посмотреть
     // poll //извлекаем
-
-
 }
